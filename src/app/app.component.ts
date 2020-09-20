@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   //title = 'DroneVideoRecognition';
+   move(direction) {
+    console.log(direction);
+  }
 }
+
+
+

@@ -49,20 +49,20 @@
 <!--https://www.google.com/search?q=rock+paper+scissors+ui+images&rlz=1C1CHBF_enUS853US853&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiUntO8tITqAhWhQjABHQ7iCFwQ_AUoAXoECAwQAw&biw=1920&bih=958#imgrc=z4TE1ELEXBIUhM -->
 <div id="game" class="container-fluid text-center">
 
-  <h2 id="message"><span>Please choose Rock, Paper or Scissors. Current Score:</span></h2>
-  <h3 class="score1"><span>Your Score: <span class="score1" id="scoreHuman"></span></span></h3>
-  <p></p>
-  <h3 class="score2"><span>Computer Score: <span class="score2" id="scoreComputer"></span></span></h3>
-  <h3 class="computerPick"><span>Computer Choose: <span id="computerPick"></span></span></h3>
+<!--  <h2 id="message"><span>Please choose Rock, Paper or Scissors. Current Score:</span></h2>-->
+<!--  <h3 class="score1"><span>Your Score: <span class="score1" id="scoreHuman"></span></span></h3>-->
+<!--  <p></p>-->
+<!--  <h3 class="score2"><span>Computer Score: <span class="score2" id="scoreComputer"></span></span></h3>-->
+<!--  <h3 class="computerPick"><span>Computer Choose: <span id="computerPick"></span></span></h3>-->
   <div  class="row justify-content-center">
     <div class="col-md-offset-3 col-sm-2 col-md-auto ">
-      <button class="choice" id="flipRight" disabled><img src="../assets/imgs/flipright.png" height="135" width="112"/></button>
+      <button type="button" class="choice" id="flipRight" ><img src="../assets/imgs/flipright.png" height="135" width="112"/></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button class="choice" id="paper" disabled><img src="../assets/imgs/up.png" height="135" width="112"/></button>
+      <button type="button" class="choice" id="paper" ><img src="../assets/imgs/up.png" height="135" width="112"/></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button class="choice" id="flipLeft" disabled><img src="../assets/imgs/flipleft.png" height="135" width="112"/></button>
+      <button type="button" class="choice" id="flipLeft" ><img src="../assets/imgs/flipleft.png" height="135" width="112"/></button>
     </div>
   </div>
 
@@ -70,23 +70,23 @@
 
 
     <div class="col-sm-2 col-md-offset-4 ">
-      <button class="choice" id="rock" disabled><img src="../assets/imgs/left.png" height="135" width="112"/></button>
+      <button type="button" class="choice" id="rock" ><img src="../assets/imgs/left.png" height="135" width="112"/></button>
     </div>
 
     <div class="col-sm-2 col-md-auto ">
-      <button class="choice" id="scissors" disabled><img src="../assets/imgs/right.png" height="135" width="112"/>
+      <button type="button" class="choice" id="scissors" ><img src="../assets/imgs/right.png" height="135" width="112"/>
       </button>
     </div>
   </div>
   <div  class="row justify-content-center">
     <div class="col-md-offset-3 col-sm-2 col-md-auto ">
-      <button class="choice" id="flyUP" disabled><img src="../assets/imgs/up.png" height="135" width="112"/></button>
+      <button type="button" class="choice" id="flyUP" ><img src="../assets/imgs/up.png" height="135" width="112"/></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button class="choice" id="downButton" disabled><img src="../assets/imgs/down.png" height="135" width="112"/></button>
+      <button type="button" class="choice" id="downButton" ><img src="../assets/imgs/down.png" height="135" width="112"/></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button class="choice" id="flyDown" disabled><img src="../assets/imgs/down.png" height="135" width="112"/></button>
+      <button type="button" class="choice" id="flyDown" (click)="move('fly down')" ><img src="../assets/imgs/down.png" height="135" width="112"/></button>
     </div>
   </div>
   <p></p>
