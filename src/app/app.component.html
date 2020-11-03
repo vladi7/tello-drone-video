@@ -26,13 +26,13 @@
 
   <div  class="row justify-content-center">
     <div class="col-md-offset-3 col-sm-2 col-md-auto ">
-      <button type="button"  id="flipRight" class="btn red-background white btn-lg"> <i class="fa fa-rotate-left"></i></button>
+      <button type="button" (click)="performAction('ccw 35')" id="ccw" class="btn red-background white btn-lg"> <i class="fa fa-rotate-left"></i></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button type="button" id="up"  class="btn red-background white btn-lg" ><i class="fa fa-arrow-up"></i></button>
+      <button (click)="performAction('forward 20')" type="button" id="forward" class="btn red-background white btn-lg" ><i class="fa fa-arrow-up"></i></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button type="button"  id="flipLeft" class="btn red-background white btn-lg"><i class="fa fa-rotate-right"></i></button>
+      <button type="button" (click)="performAction('cw 35')" id="cw" class="btn red-background white btn-lg"><i class="fa fa-rotate-right"></i></button>
     </div>
   </div>
 
@@ -40,44 +40,79 @@
 
 
     <div class="col-sm-2 col-md-offset-4 ">
-      <button type="button" id="left"  class="btn red-background white btn-lg"><i class="fa fa-arrow-left"></i></button>
+      <button type="button" id="left" (click)="performAction('left 20')" class="btn red-background white btn-lg"><i class="fa fa-arrow-left"></i></button>
     </div>
 
     <div class="col-sm-2 col-md-auto ">
-      <button type="button" id="right"  class="btn red-background white btn-lg"><i class="fa fa-arrow-right"></i></button>
+      <button type="button" id="right" (click)="performAction('right 20')" class="btn red-background white btn-lg"><i class="fa fa-arrow-right"></i></button>
     </div>
   </div>
   <div  class="row justify-content-center">
     <div class="col-md-offset-3 col-sm-2 col-md-auto ">
-      <button type="button"  id="flyUP" class="btn red-background white btn-lg"><i class="fa fa-undefined"></i> Fly   &nbsp;Up</button>
+      <button type="button" (click)="performAction('up 30')" id="flyUP" class="btn red-background white btn-lg"><i class="fa fa-undefined"></i> Fly   &nbsp;Up</button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button type="button" id="down"  class="btn red-background white btn-lg"><i class="fa fa-arrow-down"></i></button>
+      <button type="button" (click)="performAction('back 20')" id="back" class="btn red-background white btn-lg"><i class="fa fa-arrow-down"></i></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button type="button"  id="flyDown" class="btn red-background white btn-lg"><i class="fa fa-undefined"></i> Fly  Dwn</button>
+      <button type="button" (click)="performAction('down 30')" id="flyDown" class="btn red-background white btn-lg"><i class="fa fa-undefined"></i> Fly  Dwn</button>
     </div>
   </div>
   <p></p>
   <div class="container-fluid text-center">
     <div  class="row justify-content-center">
+      <div class="col-md-offset-4 col-sm-2 col-md-auto ">
+    <button (click)="performAction('takeoff')" id="takeOff" class="btn red-background white btn-lg">TAKE OFF!</button>
+      </div>
+      <div class="col-sm-2 col-md-auto ">
+        <button (click)="performAction('land')" id="land" class="btn red-background white btn-lg">LANDING!</button>
+      </div>
+    </div>
+
+  </div>
+  <p></p>
+
+  <div class="container-fluid text-center">
+    <div  class="row justify-content-center">
       <div class="col-md-auto ">
-    <button id="takeOff" class="btn red-background white btn-lg">TAKE OFF!</button>
+        <button (click)="performAction('emergency')" id="emergency" class="btn red-background white btn-lg">EMERGENCY!</button>
       </div>
     </div>
   </div>
 <br>
   <div class="container-fluid text-center">
     <div  class="row justify-content-center">
-      <div class="col-md-auto ">
-    <button id="connect" class="btn red-background white btn-lg">Connect</button>
+      <div class="col-md-offset-3 col-md-2 col-md-auto ">
+        <button id="streamon" (click)="performAction('streamon')" class="btn red-background white btn-lg">Video Stream On</button>
+      </div>
+      <div class=" col-md-2 col-md-auto ">
+    <button id="connect" (click)="performAction('command')" class="btn red-background white btn-lg">Connect</button>
+      </div>
+      <div class=" col-md-2 col-md-auto ">
+        <button id="streamoff" (click)="performAction('streamoff')" class="btn red-background white btn-lg">Video Stream Off</button>
       </div>
     </div>
   </div>
 </div>
-<div class="container-fluid text-center">
+<p></p>
 
+<div  style="font-size:20pt;" class="container-fluid text-center">
+  <div #time></div>
 <div>Drone Parameters:</div>
-<div #myDiv></div></div>
+  <div #battery></div>
+  <div #height></div>
+  <div #verticalSpeed></div>
+  <div #horizontalSpeed></div>
+  <div #verticalAcceleration></div>
+  <div #horizontalAcceleration></div>
+  <div #pressure></div>
+  <div #lowestTemp></div>
+  <div #highestTemp></div>
+  <div #timeInFlying></div>
+  <div #distanceOfFlying></div>
+  <div #elevationPitch></div>
+  <div #elevationRoll></div>
+
+</div>
 
 </html>
