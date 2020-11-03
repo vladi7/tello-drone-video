@@ -21,14 +21,21 @@ export class AppComponent {
   @ViewChild('distanceOfFlying') distanceOfFlying: ElementRef;
   @ViewChild('elevationPitch') elevationPitch: ElementRef;
   @ViewChild('elevationRoll') elevationRoll: ElementRef;
+  @ViewChild('speed') speed: ElementRef;
 
 
   timer;
+  timer2;
   socket = io('http://localhost:7777');
-  droneState;
+  speedValue: any;
+
   private number;
   ngOnInit(): void {
     this.timer = setInterval(() => {
+      this.time.nativeElement.innerHTML = new Date();
+    }, 1000);
+
+    this.timer2 = setInterval(() => {
       this.time.nativeElement.innerHTML = new Date();
       this.socket.on('stateOfTheDrone', dronestate => {
         this.battery.nativeElement.innerHTML =  'BATTERY: ' + dronestate.bat.toString() + '%';
@@ -46,15 +53,24 @@ export class AppComponent {
         this.distanceOfFlying.nativeElement.innerHTML =  ('Total Flying Distance: ' + dronestate.tof.toString());
         this.elevationPitch.nativeElement.innerHTML =  ('Elevation Pitch in Degrees: ' + dronestate.pitch.toString());
         this.elevationRoll.nativeElement.innerHTML =  ('Elevation Roll in Degrees: ' + dronestate.roll.toString());
-        });
+      });
 
-    }, 1000);
+    }, 2500);
+
   }
    performAction(command): void {
     console.log(command);
     this.socket.emit('command', command);
   }
-
+  changeSpeed(speed): void {
+    this.speedValue = this.speed.nativeElement.value;
+    if (this.speedValue < 10 || this.speedValue > 100) {
+      console.log('Speed out of range');
+      return;
+    }
+    console.log(this.speedValue);
+    this.socket.emit('command', 'speed ' + this.speedValue.toString());
+  }
 
 }
 

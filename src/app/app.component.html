@@ -23,16 +23,29 @@
 </div>
 <!--https://www.google.com/search?q=rock+paper+scissors+ui+images&rlz=1C1CHBF_enUS853US853&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiUntO8tITqAhWhQjABHQ7iCFwQ_AUoAXoECAwQAw&biw=1920&bih=958#imgrc=z4TE1ELEXBIUhM -->
 <div id="game" class="container-fluid text-center">
+  <div  class="row justify-content-center">
+  <div class="col-md-offset-5 col-sm-2 col-md-auto form-group input-group">
+    <input #speed class="form-control" placeholder="Speed: 10-100" type="text">
+  </div>
+  </div>
+  <div  class="row justify-content-center">
+
+  <div class="col-md-offset-5 col-sm-2 col-md-auto ">
+    <button type="button" (click)="changeSpeed(speed)" id="speedSet" class="btn red-background white btn-lg"> <i class="fa fa-undefined"></i>CHANGE SPEED</button>
+  </div>
+  </div>
+
+  <p></p>
 
   <div  class="row justify-content-center">
     <div class="col-md-offset-3 col-sm-2 col-md-auto ">
       <button type="button" (click)="performAction('ccw 35')" id="ccw" class="btn red-background white btn-lg"> <i class="fa fa-rotate-left"></i></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button (click)="performAction('forward 20')" type="button" id="forward" class="btn red-background white btn-lg" ><i class="fa fa-arrow-up"></i></button>
+      <button (click)="performAction('forward 40')" type="button" id="forward" class="btn red-background white btn-lg" ><i class="fa fa-arrow-up"></i></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button type="button" (click)="performAction('cw 35')" id="cw" class="btn red-background white btn-lg"><i class="fa fa-rotate-right"></i></button>
+      <button type="button" (click)="performAction('cw 40')" id="cw" class="btn red-background white btn-lg"><i class="fa fa-rotate-right"></i></button>
     </div>
   </div>
 
@@ -40,11 +53,11 @@
 
 
     <div class="col-sm-2 col-md-offset-4 ">
-      <button type="button" id="left" (click)="performAction('left 20')" class="btn red-background white btn-lg"><i class="fa fa-arrow-left"></i></button>
+      <button type="button" id="left" (click)="performAction('left 40')" class="btn red-background white btn-lg"><i class="fa fa-arrow-left"></i></button>
     </div>
 
     <div class="col-sm-2 col-md-auto ">
-      <button type="button" id="right" (click)="performAction('right 20')" class="btn red-background white btn-lg"><i class="fa fa-arrow-right"></i></button>
+      <button type="button" id="right" (click)="performAction('right 40')" class="btn red-background white btn-lg"><i class="fa fa-arrow-right"></i></button>
     </div>
   </div>
   <div  class="row justify-content-center">
@@ -52,7 +65,7 @@
       <button type="button" (click)="performAction('up 30')" id="flyUP" class="btn red-background white btn-lg"><i class="fa fa-undefined"></i> Fly   &nbsp;Up</button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button type="button" (click)="performAction('back 20')" id="back" class="btn red-background white btn-lg"><i class="fa fa-arrow-down"></i></button>
+      <button type="button" (click)="performAction('back 40')" id="back" class="btn red-background white btn-lg"><i class="fa fa-arrow-down"></i></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
       <button type="button" (click)="performAction('down 30')" id="flyDown" class="btn red-background white btn-lg"><i class="fa fa-undefined"></i> Fly  Dwn</button>
