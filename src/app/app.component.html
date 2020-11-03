@@ -8,61 +8,31 @@
         type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_default&stacked=h-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-<div class="jumbotron text-center">
-  <h1>Tello Drone Controller</h1>
-  <p>Using Angular CLI and Node.js</p>
+  <div class="container-fluid text-center">
+  <h1 class="text-white bg-dark">Tello Drone Controller</h1>
+  <p class="text-white bg-dark">Using Angular CLI and Node.js</p>
 </div>
-<!--Hidden win messages -->
-<!--<div id="win_message" class="alert alert-success alert-dismissible fade in">-->
-<!--  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
-<!--  <strong>You WON the round, CONGRATS!</strong>-->
-<!--</div>-->
-<!--<div id="win_match_message" class="alert alert-success alert-dismissible fade in">-->
-<!--  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
-<!--  <strong>You WON the match! Computer is sad :(</strong>-->
-<!--</div>-->
-
-<!--<div id="draw_message" class="alert alert-warning alert-dismissible fade in">-->
-<!--  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
-<!--  <strong>Draw in this round, try again!</strong>-->
-<!--</div>-->
-
-<!--<div id="loss_message" class="alert alert-danger alert-dismissible fade in">-->
-<!--  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
-<!--  <strong>You lost the round :(</strong>-->
-<!--</div>-->
-<!--<div id="loss_match_message" class="alert alert-danger alert-dismissible fade in">-->
-<!--  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
-<!--  <strong>You lost the match, good luck next time!</strong>-->
-<!--</div>-->
-
-<!--The container used to store the clone of the alerts as a log/history of the match. It is cleared when pressing start the game with jQuery -->
-<!--<div id="history_container">-->
-
-<!--</div>-->
-<!--The following containers are used to describe all the buttons -->
+<div class="container text-center">
+  <h1 class="text-white bg-dark">VIDEOS GOES HERE</h1>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 <!--https://www.google.com/search?q=rock+paper+scissors+ui+images&rlz=1C1CHBF_enUS853US853&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiUntO8tITqAhWhQjABHQ7iCFwQ_AUoAXoECAwQAw&biw=1920&bih=958#imgrc=z4TE1ELEXBIUhM -->
 <div id="game" class="container-fluid text-center">
 
-<!--  <h2 id="message"><span>Please choose Rock, Paper or Scissors. Current Score:</span></h2>-->
-<!--  <h3 class="score1"><span>Your Score: <span class="score1" id="scoreHuman"></span></span></h3>-->
-<!--  <p></p>-->
-<!--  <h3 class="score2"><span>Computer Score: <span class="score2" id="scoreComputer"></span></span></h3>-->
-<!--  <h3 class="computerPick"><span>Computer Choose: <span id="computerPick"></span></span></h3>-->
   <div  class="row justify-content-center">
     <div class="col-md-offset-3 col-sm-2 col-md-auto ">
-      <button type="button" class="choice" id="flipRight" ><img src="../assets/imgs/flipright.png" height="135" width="112"/></button>
+      <button type="button"  id="flipRight" class="btn red-background white btn-lg"> <i class="fa fa-rotate-left"></i></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button type="button" class="choice" id="paper" ><img src="../assets/imgs/up.png" height="135" width="112"/></button>
+      <button type="button" id="up"  class="btn red-background white btn-lg" ><i class="fa fa-arrow-up"></i></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button type="button" class="choice" id="flipLeft" ><img src="../assets/imgs/flipleft.png" height="135" width="112"/></button>
+      <button type="button"  id="flipLeft" class="btn red-background white btn-lg"><i class="fa fa-rotate-right"></i></button>
     </div>
   </div>
 
@@ -70,30 +40,29 @@
 
 
     <div class="col-sm-2 col-md-offset-4 ">
-      <button type="button" class="choice" id="rock" ><img src="../assets/imgs/left.png" height="135" width="112"/></button>
+      <button type="button" id="left"  class="btn red-background white btn-lg"><i class="fa fa-arrow-left"></i></button>
     </div>
 
     <div class="col-sm-2 col-md-auto ">
-      <button type="button" class="choice" id="scissors" ><img src="../assets/imgs/right.png" height="135" width="112"/>
-      </button>
+      <button type="button" id="right"  class="btn red-background white btn-lg"><i class="fa fa-arrow-right"></i></button>
     </div>
   </div>
   <div  class="row justify-content-center">
     <div class="col-md-offset-3 col-sm-2 col-md-auto ">
-      <button type="button" class="choice" id="flyUP" ><img src="../assets/imgs/up.png" height="135" width="112"/></button>
+      <button type="button"  id="flyUP" class="btn red-background white btn-lg"><i class="fa fa-undefined"></i> Fly   &nbsp;Up</button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button type="button" class="choice" id="downButton" ><img src="../assets/imgs/down.png" height="135" width="112"/></button>
+      <button type="button" id="down"  class="btn red-background white btn-lg"><i class="fa fa-arrow-down"></i></button>
     </div>
     <div class="col-sm-2 col-md-auto ">
-      <button type="button" class="choice" id="flyDown" (click)="move('fly down')" ><img src="../assets/imgs/down.png" height="135" width="112"/></button>
+      <button type="button"  id="flyDown" class="btn red-background white btn-lg"><i class="fa fa-undefined"></i> Fly  Dwn</button>
     </div>
   </div>
   <p></p>
   <div class="container-fluid text-center">
     <div  class="row justify-content-center">
       <div class="col-md-auto ">
-    <button id="takeOff" class="btn btn-primary btn-lg">TAKE OFF!</button>
+    <button id="takeOff" class="btn red-background white btn-lg">TAKE OFF!</button>
       </div>
     </div>
   </div>
@@ -101,11 +70,14 @@
   <div class="container-fluid text-center">
     <div  class="row justify-content-center">
       <div class="col-md-auto ">
-    <button id="connect" class="btn btn-danger btn-lg">Connect</button>
+    <button id="connect" class="btn red-background white btn-lg">Connect</button>
       </div>
     </div>
   </div>
 </div>
+<div class="container-fluid text-center">
 
-</body>
+<div>Drone Parameters:</div>
+<div #myDiv></div></div>
+
 </html>

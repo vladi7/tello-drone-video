@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-size: 100% 100%;
+  background-image: url("/assets/imgs/img_bg_1.jpg");
+  /*height: 10%;*/
+  height: 0vh;
+  /* Center and scale the image nicely */
+  /*background-position: center;*/
+  background-repeat: repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white!important;
+
+}
+.red-background {background-color: #960202;}
+.white {color: #e2dede;}
