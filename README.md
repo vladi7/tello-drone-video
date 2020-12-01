@@ -1,4 +1,5 @@
 # DroneVideoRecognition
+![](FlyingDroneWithVideo.gif)
 For Tello Drone (needs to be updated to the most recent software using mobile app prior to the usage).
 ## The authors are not responsible for any damages done by drone to any person or property. Please remove blades before testing.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
