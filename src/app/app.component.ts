@@ -62,7 +62,6 @@ export class AppComponent {
   }
 
    videoFunction = async () => {
-     const l = window.location;
      this.wsUrl = 'ws://localhost:3000/';
      const player = new JSMpeg.Player(this.wsUrl, {
        canvas: this.videoCanvas.nativeElement,
@@ -71,12 +70,11 @@ export class AppComponent {
        preserveDrawingBuffer: true,
        onPlay: p => {}
      });
-     console.log(player);
   }
 
    performAction(command): void {
     console.log(command);
-    if(command === 'streamon') {
+    if (command === 'streamon') {
       this.videoFunction();
     }
     this.socket.emit('command', command);

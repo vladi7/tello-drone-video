@@ -1,3 +1,4 @@
+// Inspired by https://github.com/johnwalicki/Node-RED-DroneViewer/
 const path = require('path')
 const { spawn } = require('child_process')
 
