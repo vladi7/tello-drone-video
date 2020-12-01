@@ -3,11 +3,15 @@ const app = require('express')();
 const http = require('http').Server(app);
 const socket_io = require('socket.io')(http);
 const throttle = require('lodash/throttle');
-const TELLO_VIDEO_PORT = 11111
-const TELLO_HOST = '192.168.10.1'
+
+
+
 
 const PORT = 8889;
 const HOST = '192.168.10.1';
+
+
+
 const droneSocket = dgram.createSocket('udp4');
 droneSocket.bind(PORT);
 
@@ -20,6 +24,7 @@ function parseState(state) {
       return data;
     }, {});
 }
+
 
 const stateOfTheDrone = dgram.createSocket('udp4');
 
@@ -54,3 +59,4 @@ stateOfTheDrone.on(
 http.listen(7777, () => {
   console.log('Server is up!');
 });
+

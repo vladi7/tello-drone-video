@@ -1,5 +1,7 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import io from 'socket.io-client';
+import JSMpeg from 'jsmpeg-player';
+
 
 @Component({
   selector: 'app-root',
@@ -22,6 +24,7 @@ export class AppComponent {
   @ViewChild('elevationPitch') elevationPitch: ElementRef;
   @ViewChild('elevationRoll') elevationRoll: ElementRef;
   @ViewChild('speed') speed: ElementRef;
+  @ViewChild('videoCanvas') videoCanvas: ElementRef;
 
 
   timer;
@@ -29,7 +32,7 @@ export class AppComponent {
   socket = io('http://localhost:7777');
   speedValue: any;
 
-  private number;
+  private wsUrl: string;
   ngOnInit(): void {
     this.timer = setInterval(() => {
       this.time.nativeElement.innerHTML = new Date();
@@ -56,13 +59,30 @@ export class AppComponent {
       });
 
     }, 2500);
-
   }
+
+   videoFunction = async () => {
+     const l = window.location;
+     this.wsUrl = 'ws://localhost:3000/';
+     const player = new JSMpeg.Player(this.wsUrl, {
+       canvas: this.videoCanvas.nativeElement,
+       audio: false,
+       videoBufferSize: 512 * 1024,
+       preserveDrawingBuffer: true,
+       onPlay: p => {}
+     });
+     console.log(player);
+  }
+
    performAction(command): void {
     console.log(command);
+    if(command === 'streamon') {
+      this.videoFunction();
+    }
     this.socket.emit('command', command);
   }
-  changeSpeed(speed): void {
+
+  changeSpeed(): void {
     this.speedValue = this.speed.nativeElement.value;
     if (this.speedValue < 10 || this.speedValue > 100) {
       console.log('Speed out of range');
