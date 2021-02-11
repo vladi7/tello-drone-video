@@ -1,4 +1,4 @@
-# DroneVideoRecognition
+# Drone Video Recognition
 ![](FlyingDroneWithVideo.gif)
 For Tello Drone (needs to be updated to the most recent software using mobile app prior to the usage).
 ## The authors are not responsible for any damages done by drone to any person or property. Please remove blades before testing.
